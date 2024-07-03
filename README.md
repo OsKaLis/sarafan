@@ -2,6 +2,9 @@
   <h1>Сарафан</h1>
 </div>
 
+## Клонировать в папку
+(Клонируем проект):git clone git@github.com:OsKaLis/sarafan.git
+
 > [!NOTE]
 > 1.	Напишите программу, которая выводит n первых элементов последовательности 122333444455555… (число повторяется столько раз, чему оно равно).
 ### Выполнить:
@@ -23,6 +26,26 @@
 > •	Операции по эндпоинтам категорий и продуктов может осуществлять любой пользователь
 > •	Операции по эндпоинтам корзины может осуществлять только авторизированный пользователь и только со своей корзиной
 > •	Реализовать авторизацию по токену
+
+### Стек
+## Cтек технологий:
+<img src="https://img.shields.io/badge/Python_-3.12-green"> <img src="https://img.shields.io/badge/Django_-3.2.16-green"> <img src="https://img.shields.io/badge/djoser_-2.1.0-black">
+<img src="https://img.shields.io/badge/djangorestframework_-3.12.4-black"> <img src="https://img.shields.io/badge/djangorestframework_-4.7.2-black">
+<img src="https://img.shields.io/badge/django_bootstrap5_-22.2-black">
+
+### Запуск
+* [1] cd z2\sarafan_django
+* [2] (Создание файла с настройками ".env"):
+>   ```
+>   SECRET_KEY=[{Своё значение key}]
+>   DEBUG=False
+>   ```
+* [3] (Запускаем виртуальное окружение):poetry shell
+* [4] (Устанавливаем установка зависимости для окружения):poetry install
+* [5] (Создание структуры базы): python manage.py makemigrations
+* [6] (Применить структуру): python manage.py migrate
+* [7] (Запуск приложение): python manage.py runserver
+
 
 > [!IMPORTANT]
 > Тестовое задание сдается ссылкой на свой репозиторий.
