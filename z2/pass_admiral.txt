@@ -1,0 +1,5 @@
+login: admiral
+
+mail: admiral@mail.ru
+
+pass:  YVa#ynX#Vz5	YVa#ynX#Vz5	YVa#ynX#Vz5

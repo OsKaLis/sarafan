@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+  Категорий
+{% endblock %}
+{% block content %}
+  <h1 class="pb-2 mb-0">Категорий</h1>
+  <div class="row">
+    {% for category in page_obj %}
+      {% ifchanged %}
+        <div class="row mt-5" id="{{ category.slug }}">
+          <div class="col-12">
+            <h3>{{ category.name }}:</h3>
+            <ul>
+            {% for Under_categories in Under_categories_all %}
+              {% if category.name == Under_categories.category__name %}
+                <li>{{ Under_categories.name }}</li>
+              {% endif %}
+            {% endfor %}
+            </ul>
+          </div>
+        </div>
+      {% endifchanged %}
+    {% endfor %}
+  </div>
+  {% include "includes/paginator.html" %}
+{% endblock %}

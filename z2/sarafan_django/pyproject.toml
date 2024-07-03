@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "sarafan-django"
+version = "0.1.0"
+description = ""
+authors = ["Юра Юшко <oskaLis@yandex.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "3.2.16"
+pillow = "^10.3.0"
+python-dotenv = "^1.0.1"
+django-bootstrap5 = "22.2"
+djangorestframework = "3.12.4"
+
+
+[tool.poetry.group.dev.dependencies]
+setuptools = "^70.1.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

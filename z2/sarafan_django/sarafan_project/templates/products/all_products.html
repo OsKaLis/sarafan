@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+  Продукты
+{% endblock %}
+{% block content %}
+  <h1 class="pb-2 mb-0">Продукты</h1>
+  <div class="row">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Название</th>
+          <th scope="col">slug</th>
+          <th scope="col">Категория</th>
+          <th scope="col">Подкатегория</th>
+          <th scope="col">Цена</th>
+          <th scope="col">size</th>
+          <td scope="col"></td>
+        </tr>
+      </thead>
+      <tbody>
+    {% for products in page_obj %}
+      {% ifchanged %}
+          <tr>
+            <th scope="row">{{ products.pk }}</th>
+            <td>{{ products.name }}</td>
+            <td>{{ products.slug }}</td>
+            <td>{{ products.current_under_category__category__name }}</td>
+            <td>{{ products.current_under_category__name }}</td>
+            <td>{{ products.price }}</td>
+            {% for size in size_all %}
+              {% if products.pk == size.logo_products %}
+                <td>
+                  <ul>
+                    <li>size_1 ({{ size.size_1 }})</li>
+                    <li>size_2 ({{ size.size_2 }})</li>
+                    <li>size_3 ({{ size.size_3 }})</li>
+                  </ul>
+                </td>
+            <td>
+              <a href="/basket/{{ products.pk }}/add/"
+                 class="btn btn-outline-primary"
+                 role="button">
+                Добавить
+              </a>
+            </td>
+              {% endif %}
+            {% endfor %}
+          </tr>
+      {% endifchanged %}
+    {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% include "includes/paginator.html" %}
+{% endblock %}

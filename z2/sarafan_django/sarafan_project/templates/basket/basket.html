@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+  Корзина
+{% endblock %}
+{% block content %}
+  <h1 class="pb-2 mb-0">Корзина</h1>
+  <div class="row">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Продукт</th>
+          <th scope="col">Количество</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+    {% for product in basket_user %}
+      {% ifchanged %}
+          <tr>
+            <th scope="row">{{ product.sequence_number }}</th>
+            <td>{{ product.products__name }}</td>
+            <td>{{ product.quantity }}</td>
+            <td>
+              <a href="/basket/{{ product.pk }}/del/"
+                 class="btn btn-outline-danger"
+                 role="button">
+                Убрадь
+              </a>
+              <a href="/basket/{{ product.pk }}/change_quantities/"
+                 class="btn btn-outline-success"
+                 role="button">
+                Изменить количество продукта
+              </a>
+            </td>
+          </tr>
+      {% endifchanged %}
+    {% endfor %}
+      </tbody>
+    </table>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Суммы стоимости товаров</th>
+          <th scope="col">Количества товаров </th>
+        </tr>
+      </thead>
+      <tbody>
+      {% ifchanged %}
+        <tr>
+          <th scope="row">Итоги</th>
+          <td> {{ results.amount }} </td>
+          <td> {{ results.quantity }} </td>
+        </tr>
+      {% endifchanged %}
+      </tbody>
+    </table>
+    <div>
+      <a href="{% url 'products:basket_clean' %}" class="btn btn-outline-danger" role="button">
+      Очистить корзину
+      </a>
+    </div>
+  </div>
+{% endblock %}

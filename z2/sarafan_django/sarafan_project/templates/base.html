@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="{% static 'img/ingredients.svg' %}" type="image">
+    {% load django_bootstrap5 %}
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <title>
+      {% block title %}{% endblock %}
+    </title>
+    <style>
+        h1 {color: #0d6efd; text-align: center;}
+        div {margin-top: 10px;}
+    </style>
+
+  </head>
+  <body>
+    {% include "includes/header.html" %}
+    <main class="pt-5 my-5">
+      <div class="container">
+      {% block content %}{% endblock %}
+      </div>
+    </main>
+    {% include "includes/footer.html" %}
+  </body>
+</html>

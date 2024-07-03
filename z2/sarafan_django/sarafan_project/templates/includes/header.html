@@ -1,0 +1,45 @@
+{% load static %}
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+    <div class="container">
+      <div 
+        class="navbar-toggler" 
+        type="button" 
+        data-toggle="collapse" 
+        data-target="#navbarNav" 
+        aria-controls="navbarNav" 
+        aria-expanded="false" 
+        aria-label="Toggle navigation"
+        >
+        <span class="navbar-toggler-icon"></span>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        {% with request.resolver_match.view_name as view_name %}            
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a
+              class="nav-link {% if view_name == 'products:all_categories' %} active {% endif %}"
+              href="{% url 'products:all_categories' %}"
+              >Категорий
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link {% if view_name == 'products:all_products' %} active {% endif %}"
+              href="{% url 'products:all_products' %}"
+              >Ппродукты
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link {% if view_name == 'products:basket' %} active {% endif %}"
+              href="{% url 'products:basket' %}"
+              >Корзина
+            </a>
+          </li>
+        </ul>
+        {% endwith %}
+      </div>
+    </div>
+  </nav>
+</header>
