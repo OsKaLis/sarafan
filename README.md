@@ -41,9 +41,10 @@
 >   ```
 * [3] (Запускаем виртуальное окружение):poetry shell
 * [4] (Устанавливаем установка зависимости для окружения):poetry install
-* [5] (Создание структуры базы): python manage.py makemigrations
-* [6] (Применить структуру): python manage.py migrate
-* [7] (Запуск приложение): python manage.py runserver
+* [5] (перейти в каталог): cd sarafan_project
+* [6] (Создание структуры базы): python manage.py makemigrations
+* [7] (Применить структуру): python manage.py migrate
+* [8] (Запуск приложение): python manage.py runserver
 
 
 > [!IMPORTANT]
