@@ -9,7 +9,7 @@ from .configurations import (
 class Users(AbstractUser):
     """Таблица пользователей."""
     USER_TEMPLATE = '{}: {}. {}.'
-    user_name = models.CharField(
+    username = models.CharField(
         'Логин',
         max_length=STANDARD_FIELD_VALUE,
         unique=True,
@@ -31,13 +31,13 @@ class Users(AbstractUser):
     )
 
     class Meta:
-        ordering = ('last_name', 'first_name', 'user_name')
+        ordering = ('last_name', 'first_name', 'username')
         verbose_name = 'Пользователь'
         verbose_name_plural = 'Пользователи'
 
     def __str__(self):
         return self.USER_TEMPLATE.format(
-            self.user_name,
+            self.username,
             self.first_name,
             self.last_name
         )

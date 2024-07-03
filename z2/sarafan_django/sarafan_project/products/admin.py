@@ -28,9 +28,10 @@ class UnderCategoryPanel(admin.ModelAdmin):
     list_editable = ('name', 'slug',)
     list_filter = ('category',)
 
+
 class LogosProductsPanel(admin.TabularInline):
     model = SizeImage
-    # extra = 0
+
 
 @admin.register(Products)
 class ProductsPanel(admin.ModelAdmin):

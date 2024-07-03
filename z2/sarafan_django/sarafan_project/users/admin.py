@@ -8,12 +8,12 @@ class UsersPanel(admin.ModelAdmin):
     list_display = (
         'pk',
         'email',
-        'user_name',
+        'username',
         'first_name',
         'last_name',
         'password',
     )
     list_editable = ('password',)
-    list_filter = ('user_name', 'email')
-    search_fields = ('user_name', 'email')
+    list_filter = ('username', 'email')
+    search_fields = ('username', 'email')
     empty_value_display = '-пусто-'
