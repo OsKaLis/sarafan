@@ -1,10 +1,16 @@
+import os
+import uuid
 from pathlib import Path
+
+from dotenv import load_dotenv
+
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-$u^su1p9*a+(fz-#o9db8%z3r)juxl$_ftz(ndd@+e3+6-q$i9'
+SECRET_KEY = os.getenv('SECRET_KEY', uuid.uuid4())
 
-DEBUG = True
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = []
 
