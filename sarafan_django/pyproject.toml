@@ -12,6 +12,8 @@ pillow = "^10.3.0"
 python-dotenv = "^1.0.1"
 django-bootstrap5 = "22.2"
 djangorestframework = "3.12.4"
+djoser = "2.1.0"
+djangorestframework-simplejwt = "4.7.2"
 
 
 [tool.poetry.group.dev.dependencies]

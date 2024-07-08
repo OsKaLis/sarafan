@@ -158,3 +158,4 @@ base/migrations/
 *.cmd
 *.pdf
 *.txt
+*.docx
