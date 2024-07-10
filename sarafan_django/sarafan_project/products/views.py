@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404
+from django.contrib.auth import get_user_model
 from django.core.paginator import Paginator
 from django.http import HttpResponseRedirect
 
-from users.models import Users
 from .forms import BasketForm
 from .models import (
     Category, UnderCategory, Products, SizeImage,
@@ -11,6 +11,8 @@ from .models import (
 from sarafan_project.settings import (
     PAGINATION_SIZE,
 )
+
+Users = get_user_model()
 
 
 def basket_clean(request):

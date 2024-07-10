@@ -153,9 +153,10 @@ sent_emails/
 users/migrations/
 base/migrations/
 
-# Ненужно картинки
+# Ненужно в проекте
 *.bat
 *.cmd
 *.pdf
 *.txt
 *.docx
+*.sqlite3
